@@ -1,0 +1,22 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vh: 100%;
+}
+
+@media screen and (max-height: 700px) {
+  :root {
+    --vh: 100vh;
+  }
+}
+
+/* Fix for mobile safari dynamic viewport height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

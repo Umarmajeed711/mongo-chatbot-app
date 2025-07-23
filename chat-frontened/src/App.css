@@ -1,0 +1,28 @@
+.main{
+    height: calc(100vh);
+    
+}
+
+.requiredError{
+    color: red;
+    margin: 0;
+    font-size: 12px;
+    padding: 0;
+    opacity: 1;
+}
+.ErrorArea{
+    color: transparent;
+    opacity: 0;
+    margin: 0;
+    font-size: 12px;
+    padding: 0;
+}
+
+.isLogin{
+    background: linear-gradient(to top ,#1E1922, #311548,#1a1a1a);
+    color: white;
+}
+
+.chat-height{
+    height: calc((100vh - 112px));
+}
