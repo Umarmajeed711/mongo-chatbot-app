@@ -16,7 +16,7 @@ import path from "path";
 
 
 
-const PORT = 5002;
+const PORT = process.env.PORT || 5002;
 const app = express();
 
 const server = createServer(app);
