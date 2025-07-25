@@ -8,6 +8,8 @@ import IsLogin from '../pages/isLogin'
 import Chats from './chats'
 import Calls from './calls'
 import UserChat from '../pages/UserChat'
+import Profile from './Profile'
+import Status from './Status'
 
 
 
@@ -22,12 +24,14 @@ const Myroute = () => {
 
    <div>
     {
-     (state?.isLogin == true) ?
+     (state?.isLogin == false) ?
     
     <Routes>
         <Route path='/home'   element={<Home/>}>
-          <Route path=''  element={<Chats />} />
-          <Route path='calls' element={<Calls />} />
+          <Route path=''  element={<Chats/>} />
+          <Route path='calls' element={<Calls/>} />
+          <Route path='Status' element={<Status/>}/>
+          <Route path="Profile" element={<Profile/>}/>
         </Route>
         <Route path='/UserChat/:id' element={<UserChat/>}></Route>
         <Route path="*" element={<Navigate to="/home" />}></Route>

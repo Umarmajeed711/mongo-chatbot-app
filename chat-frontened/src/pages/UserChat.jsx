@@ -60,7 +60,7 @@ const UserChat = () => {
 
 
   useEffect(() => {
-        const socket = io("http://localhost:5002");
+        const socket = io("");
     
         socket.on('connect', () => {
             console.log("Connected to server");

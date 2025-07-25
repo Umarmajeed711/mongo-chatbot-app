@@ -33,7 +33,7 @@ const Chats = () => {
     
        
 
-     <div className="isLogin h-full">
+     <div className="bg-[#24786d] h-full">
       <div className="my-2">
         {
           Users.map((eachUser,i) =>{

@@ -31,33 +31,37 @@ const Home = () => {
         </div>
 
         <div className="flex items-end justify-between bg-white text-black  p-2 w-full h-14">
-          <div className="flex flex-col items-center gap-1">
+           <Link to="/home" className="flex flex-col items-center gap-1">
             <div>
               <FaUser />
             </div>
+
             <div>Chats</div>
-          </div>
+           </Link>
+          
 
-          <div className="flex flex-col items-center gap-1">
+      
+          <Link to="calls" className="flex flex-col items-center gap-1">
             <div>
               <FaUser />
             </div>
+
             <div>Calls</div>
-          </div>
+           </Link>
 
-          <div className="flex flex-col items-center gap-1">
+           <Link to="Status" className="flex flex-col items-center gap-1">
             <div>
               <FaUser />
             </div>
-            <div>Status</div>
-          </div>
+           <div>Status</div>
+          </Link>
 
-          <div className="flex flex-col items-center gap-1">
+           <Link to="Profile" className="flex flex-col items-center gap-1">
             <div>
               <FaUser />
             </div>
-            <div>Profile</div>
-          </div>
+           <div>Profile</div>
+          </Link>
         </div>
       </div>
 
