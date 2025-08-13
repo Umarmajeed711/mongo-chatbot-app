@@ -11,6 +11,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Alert from "@mui/material/Alert";
 import api from "../components/api";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export const Signup = () => {
   let { state, dispatch } = useContext(GlobalContext);
@@ -109,8 +110,12 @@ export const Signup = () => {
       "border-b-2  bg-transparent p-1 outline-none focus:drop-shadow-xl w-[230px]",
   };
   return (
-    <div className="flex justify-center items-center h-full overflow-hidden bg-slate-100">
-      <div className="flex justify-center   gap-20  p-16  ">
+    <div className="flex justify-center items-center h-screen overflow-hidden bg-slate-100">
+      <div className="flex justify-center items-center  gap-20  p-16 relative ">
+
+         <div className="absolute top-0 left-0 pt-5 hover:text-[#24786d] hidden sm:block">
+                    <Link to={"/isLogin"}><FaArrowLeftLong/></Link>
+                  </div>
         {/* Image div */}
         
         <div className="hidden  md:flex flex-col ">
@@ -138,9 +143,12 @@ export const Signup = () => {
             </Alert>
           </div>
 
-           <div className="sm:hidden">
-            <Link to={"/isLogin"}>Arrow</Link>
-          </div>
+           
+
+           <div className="sm:hidden hover:text-[#24786d]">
+                      <Link to={"/isLogin"}><FaArrowLeftLong/></Link>
+                    </div>
+          
 
           <form
             onSubmit={signUpFormik.handleSubmit}

@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Users from "../model/Users.js";
+import { customAlphabet } from 'nanoid'
+import Otps from "../model/otp.js";
 
 
 const router = express.Router();
@@ -127,6 +129,10 @@ router.get("/logout" ,(req,res) =>{
     
   }
 })
+
+
+/// Forget First ///
+
 
 
 

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import Alert from "@mui/material/Alert";
 import { Link, useNavigate } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import api from "../components/api";
 
 export const Login = () => {
@@ -86,12 +87,18 @@ export const Login = () => {
       "border-b-2  bg-transparent p-1 outline-none focus:drop-shadow-xl  w-[230px]",
   };
   return (
-    <div className="flex justify-center items-center h-full overflow-hidden bg-slate-100">
-      <div className=" flex justify-center   gap-20  p-12  ">
+    <div className="flex justify-center items-center h-screen overflow-hidden bg-slate-100">
+       
+      <div className=" flex justify-center items-center  gap-20  p-12  relative  ">
+        <div className="absolute top-0 left-0 pt-5 hover:text-[#24786d] hidden sm:block">
+            <Link to={"/isLogin"}><FaArrowLeftLong/></Link>
+          </div>
+       
 
         
         {/* Image div */}
         <div className="hidden md:flex flex-col ">
+           
           <div>
             <img src="/logo.png" alt="" className="h-48" />
           </div>
@@ -100,6 +107,7 @@ export const Login = () => {
         {/* Login form */}
 
         <div>
+
           <div className="h-[40px] w-full flex justify-center items-center mb-2 overflow-hidden">
             <Alert
               severity="error"
@@ -115,8 +123,8 @@ export const Login = () => {
             </Alert>
           </div>
 
-          <div className="sm:hidden">
-            <Link to={"/isLogin"}>Arrow</Link>
+          <div className="sm:hidden hover:text-[#24786d]">
+            <Link to={"/isLogin"}><FaArrowLeftLong/></Link>
           </div>
 
           <form

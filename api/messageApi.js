@@ -1,7 +1,8 @@
 import express from "express";
 import Message from "../model/Message.js";
-
-
+import upload from "../cloudinary.js";
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
 export default function(io) {
 
@@ -10,27 +11,52 @@ export default function(io) {
 
 // chat send api
 
-router.post('/chat/:id' , async (req,res) => {
+router.post('/chat/:id' ,upload.single("image"), async (req,res) => {
 
- 
 
-  const senderId = req.body.token.id
+
+ const decodedToken = jwt.verify(req.cookies.Token, process.env.WEB_TOKEN)
+
+  const senderId = decodedToken.id
   const receiverId = req.params.id
 
    const {message} = req.body
+   const file = req.file
 
   try{
+    let sendMessage;
 
-    if(!message){
+    if(file){
+
+      // ✅ Get the Cloudinary URL automatically
+    const imageUrl = file.path;
+
+      sendMessage = await Message.create({
+      from:senderId,
+      to:receiverId,
+      imageCaption:req.body.imageCaption,
+      imageUrl: imageUrl,
+      message: ""
+
+    })
+
+
+    }
+    else{
+
+       if(!message){
       return res.status(400).send({message:"write a message first"})
     }
 
-    let sendMessage = await Message.create({
+
+      sendMessage = await Message.create({
       from:senderId,
       to:receiverId,
       message:message
 
     })
+  }
+   
      let conversation = await Message.findById(sendMessage._id)
             .populate({path: 'from', select: {password:0}})
             .populate({path: 'to', select: {password:0}})

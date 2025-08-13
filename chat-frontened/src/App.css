@@ -1,7 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
 .main{
     height: calc(100vh);
     
 }
+
 
 .requiredError{
     color: red;
@@ -25,4 +31,29 @@
 
 .chat-height{
     height: calc((100vh - 112px));
+}
+
+/* inline-block delay-1000 -translate-y-4 hover:shadow-xl transition duration-500 */
+
+.openYes{
+    display: inline-block;
+   animation: start .3s ease-in-out 0s 1 forwards;
+ box-shadow: 10px 0px 3px rgba(0,0,0,0.5);
+}
+
+@keyframes start {
+    0%{
+        transform: translateY(10px);
+       
+    }
+    50%{
+        transform: translateY(5px);
+    
+
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+    
 }

@@ -5,17 +5,17 @@ import { FaUser } from "react-icons/fa";
 const IsLogin = () => {
   return (
     
-    <div className='h-full flex justify-center '>
+    <div className='h-screen flex justify-center items-center  isLogin '>
 
         
-        <div className='flex flex-col items-center p-5  h-screen isLogin w-80 '>
+        <div className='flex flex-col items-center gap-5 p-5 '>
         <div className='mt-5'>
-            <img src="/logo1.png" alt="" className='h-7' />
+            <img src="/logo1.png" alt="" className='h-10' />
         </div>
 
         <div className='my-5'>
             <p className='text-5xl font-normal'>Connect friends <span className='font-bold'> easily & quickly</span> </p>
-             <p className='text-[16px] text-gray-300 my-2'>Our chat app is the perfect way to stay connected with friends and family.</p>
+             <p className='text-xl text-gray-300 my-2 sm:text-center'>Our chat app is the perfect way to stay connected with friends and family.</p>
 
 
         </div>
